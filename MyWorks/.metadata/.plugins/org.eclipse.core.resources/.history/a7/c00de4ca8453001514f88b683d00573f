@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- HTML 주석기호 -->
+	<%-- JSP 주석기호 브라우져 소스보기에서 노출안됨 --%>
+
+</body>
+</html>

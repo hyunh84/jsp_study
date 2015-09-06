@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+    <%-- 
+    	Directive : 
+    	1. <%@ %> 기호로 표현되는 영역
+    	2. 종류
+    		- page : JSP page에 대한 정보 설정
+    		- taglib : JSP page가 사용할 taglib를 지정
+    		- include : JSP page 특정 영역에 다른 page를 포함
+    
+    
+    
+    
+     --%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- HTML 주석기호 -->
+	<%-- JSP 주석기호 브라우져 소스보기에서 노출안됨 --%>
+
+</body>
+</html>

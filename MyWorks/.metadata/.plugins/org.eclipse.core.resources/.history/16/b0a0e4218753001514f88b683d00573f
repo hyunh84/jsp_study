@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>JSP 페이지의 세가지 영역</h1>
+	<hr>
+	<%-- 선언부 
+		1. <%! %> 기호로 표현되는 영역
+		2. 기능을 수행하는 자바의 메소드를 정의할 수 있는 영역
+		3. 선언부에 변수를 선언하면, 전역변수의 의미를 가진다..
+	
+	
+	 --%>
+
+
+</body>
+</html>
