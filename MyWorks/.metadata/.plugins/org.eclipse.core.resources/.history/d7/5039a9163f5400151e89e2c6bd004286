@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+	<h2>&lt;a&gt; 이용하기 02</h2>
+	<hr>
+	
+
+	  <%
+	 	String name;
+	 	int age;
+	 	
+	 	name = request.getParameter("name");
+	 	String rvc = request.getParameter("age");
+	 	age = Integer.parseInt(rvc);
+	 	//age = request.getPatameter("age");
+	 	//제공되는 데이터는 형태가 무조건 String 이므로 목적에 맞는 형변환이 필요하다.
+	 	 	
+	 %>
+
+</body>
+</html>

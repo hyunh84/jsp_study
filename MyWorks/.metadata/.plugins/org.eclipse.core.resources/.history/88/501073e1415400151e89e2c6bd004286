@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+	<h2>&lt;form&gt; 이용하기 화면이동 정보전송 02</h2>
+	<hr>
+	
+	<%--
+	
+		
+	 --%>
+	 
+	 <%
+	 	Strgin name= request.getParameter("name");
+	 	int as = Integer.parseInt(request.getParameter('age'));
+	 %>
+	
+		<p>
+			이름 : <%= name %>
+		</p>
+		<p>
+			나이 : <%= age %> 
+		</p>
+		
+
+	 </form>
+	 
+
+
+</body>
+</html>

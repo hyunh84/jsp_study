@@ -1,0 +1,13 @@
+package dto;
+
+public class j08_people {
+
+	String name;
+	int age;
+	
+	public J08_People(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+}

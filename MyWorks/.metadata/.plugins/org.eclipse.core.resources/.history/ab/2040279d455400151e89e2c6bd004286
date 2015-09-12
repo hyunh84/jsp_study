@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+	<h2>&lt;form&gt; 의 post방식 02</h2>
+	<hr>
+	
+	<%--
+		
+		
+	 --%>
+	
+	<%
+		
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");	
+	
+	%>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+
+<%@ page import="dto.j02_people" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>클래스의 활용</h2>
+	<hr>
+	
+		<%
+			j02_people info = new j02_people();
+			
+			info.setName("둘리");
+			int rcv = (int)(Math.random()*100);
+			info.setAge(rcv);
+			
+			if(info.getAge() > 19) {
+		%>
+			
+			<%= info.getName() %>는 <%= info.getAge() %> 청소년 할인 대상이 아닙니다.
+			
+		<% //스크립트릿 영역
+			}else{
+		%>
+		
+			<%=  info.getName() %>는 <%= info.getAge() %>청소년 할인 대상입니다.
+			
+		<% //스크립트릿 영역
+			}
+		%>
+
+
+</body>
+</html>

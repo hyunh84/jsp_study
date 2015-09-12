@@ -1,0 +1,14 @@
+package dto;
+
+public class j02_people {
+	String name;
+	int age;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public static void main(String[] args) {
+		
+	}//main End
+}//class End

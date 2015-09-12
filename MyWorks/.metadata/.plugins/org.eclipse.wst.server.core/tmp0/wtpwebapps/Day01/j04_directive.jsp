@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=euc-kr"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="utf-8"%>
     
     <%-- 딻
     	Directive : 

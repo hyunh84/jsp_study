@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+	<h2>&lt;form&gt; 이용하기 화면이동 정보전송</h2>
+	<hr>
+	
+	<%--
+		form : 2가지 방법 (Get / Post)으로 정보를 전송할 수 있음
+		
+			1. Get방식
+				- form의 method 설정에 대한 기본값 방식
+				- 주소표시줄에 파라미터 정보가 표현됨
+				- action에 이동하려는 페이지를 명시함
+		
+		
+	 --%>
+	 
+	 <form action="/Day02/j05_form02.jsp">
+	 	<fieldset>
+	 		
+	 	</fieldset>
+	 </form>
+	 
+
+
+</body>
+</html>

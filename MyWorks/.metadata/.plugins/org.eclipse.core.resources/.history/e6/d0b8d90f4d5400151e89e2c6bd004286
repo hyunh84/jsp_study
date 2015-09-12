@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	* {margin:0; padding:0;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+
+</head>
+<body>
+
+	<h2>문제 : 학생 성적 정보 프로그램 02</h2>
+	<hr>
+	
+	<%
+	
+		request.setCharacterEncoding("utf-8");
+	
+		String name = request.getParameter("name");
+		int ko = Integer.parseInt(request.getParameter("ko"));
+		int en = Integer.parseInt(request.getParameter("en"));
+		int math = Integer.parseInt(request.getParameter("math"));
+		
+		int total = ko + en + math;
+		int avg = total / 3;
+		
+	
+	%>
+		<table style="width:500px; margin:50px auto 0;">
+			<colgroup>
+				<col style="width:30%;" />
+				<col style="width:70%;" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>이름</th>
+					<td><%= name %></td>
+				</tr>
+				<tr>
+					<th>국어 점수</th>
+					<td><%= ko %></td>
+				</tr>
+				<tr>
+					<th>영어 점수</th>
+					<td><%= en %></td>
+				</tr>
+				<tr>
+					<th>수학 점수</th>
+					<td><%= math %></td>
+				</tr>
+				<tr>
+					<th>총점</th>
+					<td><%= total %></td>
+				</tr>
+				<tr>
+					<th>평균</th>
+					<td><%= avg %></td>
+				</tr>
+			</tbody>
+		</table>
+		
+	
+	
+
+</body>
+</html>

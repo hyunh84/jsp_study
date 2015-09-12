@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	* {margin:0; padding:0;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+
+</head>
+<body>
+
+	<h2>button을 이용한 스크립트 페이지이동 03</h2>
+	<hr>
+	
+	<%--
+	
+	 --%>
+	<form name="frm" method="post">
+		<div style="width:500px; margin:50px auto 0;">
+			<p>데이터 : <input type="text" name="data" /></p>
+
+			
+			<button type="button" style="width:100%; margin:10px 0 0;" onclick="go02();">02 페이지 가기</button>
+			<button type="button" style="width:100%; margin:10px 0 0;">03 페이지 가기</button>
+			<button type="button" style="width:100%; margin:10px 0 0;">04 페이지 가기</button>
+		</div>
+	</form>
+	
+	
+
+</body>
+</html>

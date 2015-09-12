@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>스크립트릿과 표현식</h2>
+	<hr>
+	
+	<% //스크립트릿 영역
+		int age = 10;
+		
+		if(age > 19) {
+	%>
+		
+		<%= name %>는 청소년 할인 대상이 아닙니다.<br />
+		
+	<%
+		}else{
+	%>
+		<%= name %>는 청소년 할인 대상이 아닙니다.
+	<%
+		}
+	%>
+
+
+
+</body>
+</html>
