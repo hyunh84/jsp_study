@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="dto.FileDto"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {margin:0; padding:0;}
+	a {color:#555; text-decoration:none;}
+	a:hover {color:blue; text-decoration:underline;}
+	h2 {padding:20px 10px;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+</head>
+<body>
+	<h2>FILE 리스트 보기</h2>
+	<hr />
+	
+	<%
+		ArrayList<FileDto> listc = new ArrayList();
+	
+		try{
+			//#1. Driver Load
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("1. Driver Load Comp");
+			//#2. DB Connection
+			String url = "jdbc:oracle:thin:192.168.33.121:1521:xe";
+			String user = "para";
+			String password = "para";
+			Connection conn = DriveManager.getConnection(url, user, password);
+			
+			
+			
+			//#3. SQL(select) && executeQuery
+			String sql = "select * from fileinfo order by num desc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				FileDto dto = new FileDto();
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setTitle(rs.getString("title"));
+				dto.setOrgname(rs.getString("orgname"));
+				dto.setAddr(rs.getNString("addr"));
+				dto.setLink(rs.getString("link"));
+				dto.setRegDate(rs.getDate("regdate"));
+				
+				
+			}
+			
+		}catch(Exception e){e.printStackTrace();}
+	
+	
+	
+	
+	%>
+	
+
+
+
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

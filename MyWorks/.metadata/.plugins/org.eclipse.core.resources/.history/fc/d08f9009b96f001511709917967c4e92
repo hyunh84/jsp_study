@@ -1,0 +1,19 @@
+package dto;
+
+import java.util.Date;
+
+public class FileDto {
+	
+	int num;
+	String title;
+	String orgname;
+	String link;
+	Date regDate;
+	
+
+	
+	
+	
+	
+
+}

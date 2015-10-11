@@ -126,7 +126,7 @@
 
 	    <Context docBase="Day01" path="/Day01" reloadable="true" source="org.eclipse.jst.jee.server:Day01"/>
 	    <Context docBase="Day02" path="/Day02" reloadable="true" source="org.eclipse.jst.jee.server:Day02"/>
-      <Context docBase="Day03" path="/Day03" reloadable="true" source="org.eclipse.jst.jee.server:Day03"/></Host>
+      <Context docBase="Day03" path="/Day03" reloadable="true" source="org.eclipse.jst.jee.server:Day03"/><Context docBase="Day04" path="/Day04" reloadable="true" source="org.eclipse.jst.jee.server:Day04"/><Context docBase="Day05" path="/Day05" reloadable="true" source="org.eclipse.jst.jee.server:Day05"/><Context docBase="ROOT" path="/ROOT" reloadable="true" source="org.eclipse.jst.jee.server:ROOT"/><Context docBase="Day07" path="/Day07" reloadable="true" source="org.eclipse.jst.jee.server:Day07"/><Context docBase="Day06" path="/Day06" reloadable="true" source="org.eclipse.jst.jee.server:Day06"/></Host>
     </Engine>
   </Service>
 </Server>

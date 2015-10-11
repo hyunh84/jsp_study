@@ -1,0 +1,84 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.io.File"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="dto.FileDto"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {margin:0; padding:0;}
+	a {color:#555; text-decoration:none;}
+	a:hover {color:blue; text-decoration:underline;}
+	h2 {padding:20px 10px;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+</head>
+<body>
+	<h2>FILE  삭제</h2>
+	<hr />
+	
+	<%
+		request.setCharacterEncoding("utf-8");
+	
+		String orgName = request.getParameter("orgName");
+	
+// 		브라우저 별로 결정되는 파일 이름 형식 설정 - IE / not IE
+
+		String fileName = null;
+		
+// 		브라우져 구분하기
+		String userAgent = request.getHeader("User-Agent");
+		boolean isIE = userAgent.indexOf("Trident") > -1;
+
+		if(isIE) {
+			fileName = URLEncoder.encode(orgName, "utf-8");
+			
+		}/*else{
+			fileName = new String(orgName.getBytes("utf-8"), "ISO-8859-1");
+		}*/
+		
+// 		다운로드창 호출하기
+		response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
+
+// 		위에서 선택한 위치에 파일 저장해주기
+// 		파일 스트림을 읽어들인 후, 서블릿스트림을 통해 클라이언트 컴퓨터에 저장
+		String realPath = application.getRealPath("/upfile");
+		
+		File readFile = new File(realPath + "\\" + orgName);
+		FileInputStream fis = new FileInputStream(readFile);
+		
+// 		읽어들인 스트림 클라이언트에게 보내기 
+// 		servletOutputStream을 이용하여 전송
+// 		이용하기 전, outputStream에 존재할 수 있는 오류 상황들을 제거해야 한다.
+		out.clear();
+		out = pageContext.pushBody();
+		
+		ServletOutputStream sos = response.getOutputStream();
+		
+		int data = -1;
+		
+		while((data = fis.read()) != -1) {
+			sos.write(data);
+		}
+		
+		sos.close();
+		fis.close();
+		
+		
+
+	
+	%>
+	
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,59 @@
+<%@page import="java.io.File"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="dto.FileDto"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {margin:0; padding:0;}
+	a {color:#555; text-decoration:none;}
+	a:hover {color:blue; text-decoration:underline;}
+	h2 {padding:20px 10px;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+</head>
+<body>
+	<h2>FILE  삭제</h2>
+	<hr />
+	
+	<%
+		request.setCharacterEncoding("utf-8");
+	
+		request.getParameter("orgName");
+	
+// 		브라우저 별로 결정되는 파일 이름 형식 설정 - IE / not IE
+
+		String fileName = null;
+		
+// 		브라우져 구분하기
+		String userAgent = request.getHeader("User-Agent");
+		boolean isIE = userAgent.indexOf("Trident") > -1;
+
+		if(isIE) {
+			fileName = URLEncoder.encode(orgName, "euc-kr");
+			
+		}else{
+			fileName = new String(orgName.getBytes("euc-kr"), "ISO-8859-1");
+		}
+		
+// 		다운로드창 호출하기
+		response.setHeader("Content-Desposition", "attachent;filename=" + fileName);
+
+// 		위에서 선택한 위치에 파일 저장해주기
+// 		파일 스트림을 읽어들인 후, 서블릿스트림을 통해 클라이언트 컴퓨터에 저장
+
+	
+	%>
+	
+
+	
+	
+</body>
+</html>

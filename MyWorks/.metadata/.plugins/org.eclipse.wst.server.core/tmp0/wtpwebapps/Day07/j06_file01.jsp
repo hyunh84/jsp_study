@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {margin:0; padding:0;}
+	a {color:#555; text-decoration:none;}
+	a:hover {color:blue; text-decoration:underline;}
+	h2 {padding:20px 10px;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+</head>
+<body>
+	<h2></h2>
+	<hr />
+	
+	<%--
+		
+		클라이언트가 파일을 전송하는 경우 필요 form 조건
+		
+		1. method = "post"
+		2. enctype = "multipart/form-data"
+		
+		
+	
+	--%>
+	
+	<form action="/Day07/j06_file02.jsp" method="post" enctype="multipart/form-data">
+		<div style="width:400px; margin:50px auto 0;">
+			파일 제목 : <input type="text" name="title" /><br />
+			파일 선택 : <input type="file" name="upfile" /><br />
+		
+			<input type="submit" value="업로드하기" />
+		</div>
+	</form>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

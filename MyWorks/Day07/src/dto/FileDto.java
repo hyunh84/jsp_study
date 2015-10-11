@@ -1,0 +1,59 @@
+package dto;
+
+import java.util.Date;
+
+public class FileDto {
+	
+	int num;
+	String title;
+	String orgname;
+	String addr;
+	String link;
+	Date regDate;
+	
+	
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getOrgname() {
+		return orgname;
+	}
+	public void setOrgname(String orgname) {
+		this.orgname = orgname;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	
+
+	
+	
+	
+	
+
+}

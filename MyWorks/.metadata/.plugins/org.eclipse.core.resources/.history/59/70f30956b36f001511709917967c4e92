@@ -1,0 +1,103 @@
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {margin:0; padding:0;}
+	a {color:#555; text-decoration:none;}
+	a:hover {color:blue; text-decoration:underline;}
+	h2 {padding:20px 10px;}
+	table {border-collapse:collapse; }
+	table th {padding:5px; border:1px solid #777;}
+	table td {padding:5px; border:1px solid #777;}
+</style>
+</head>
+<body>
+	<h2></h2>
+	<hr />
+	
+	<%
+	
+		//MultipartRequest	
+		//파일을 쉽게 이용할 수 있도록 제공하는 클래스
+		//다운로드 위치 : www.servlets.com -> com.Oreilly.Servlet -> 다운로드
+		//cos~.jar파일 -> 압축 푼 후 cos.jar파일 복사 및 이용
+		
+		//생성자 인자값
+		//1. 첫번째 인자 : request
+		//2. 두번째 인자 : 파일을 저장할 위치 (웹서버 경로)
+		//3. 세번째 인자 : 최대 처리 파일 크기 설정 (바이트 단위)
+		//(예 : 30메가 = 1024*1024*30)
+		//4. 네번째 인자 : 파일 이름에 대한 인코딩 방식
+		//(파일이름이 한글일 경우 EUC-KR 또는 UTF-8등 설정)
+		
+		
+		String realPath = application.getRealPath("/upfile");
+		//대상 폴더에 대해서, 서버에서의 실제 위치 경로를 자동으로 제공하는 명령
+		
+		System.out.println("실제 사진이 저장되는 이클립스 내부 서버의 경로 : " + realPath);
+		
+		String upRoot = "C:\\hyunh\\MyWorks\\Day07\\WebContent\\upfile";
+		
+		MultipartRequest mr = new MultipartRequest(request, upRoot, 1024*1024*3, "utf-8");
+			
+	
+		//String title = request.getParameter("title");
+		
+		try{
+			//1. DriverLoad
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("#1. Driver Load End");
+			
+			//2. DB Connection
+			String url = "jdbc:oracle:thin:@192.168.33.121:1521:xe";
+			String user = "para";
+			String password = "para";
+			Connection conn = DriverManager.getConnection(url, user, password);
+			
+			System.out.println("#2.DB Connection Comp");
+			
+			//3. SQL(insert) && executeUpdate
+			String title = request.getParameter("title");
+			
+			String orgName = mr.getOriginalFileName("upfile");
+			//파일의 실제 이름
+			System.out.println("파일의 실제 이름 orgName : " + orgName);
+			
+			String addr = realPath + orgName;
+			//파일 삭제 시 사용할 실제경로
+			System.out.println("파일 삭제 경로 : " + addr);
+			
+			String link = "/Day07/upfile/" + orgName;
+			//화면에 보여줄 때 사용되는 web경로
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+			
+		
+	
+	
+	
+	%>
+	
+
+<!-- 		파일 제목 : <br /> -->
+<!-- 		파일 선택 : <br /> -->
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

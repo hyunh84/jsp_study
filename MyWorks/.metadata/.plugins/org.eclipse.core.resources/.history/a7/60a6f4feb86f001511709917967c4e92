@@ -1,0 +1,16 @@
+package dto;
+
+public class FileDto {
+	
+	int num;
+	String title;
+	String orgname;
+	String link;
+	Date regdate;
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%
+		String id = (String)session.getAttribute("nowLog");
+	
+		session.invalidate();
+		
+		String msg = id + " 회원님 안녕히 가십시오";
+	%>
+
+	<script type="text/javascript">
+		alert("<%= msg %>");
+		location.href="/index.jsp";
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
